@@ -24,7 +24,7 @@ function setup() {
   unit = width/3;
   
   let fs = fullscreen();
-    fullscreen(!fs);
+    fullscreen(true);
   
 }
 
