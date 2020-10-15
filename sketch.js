@@ -58,8 +58,8 @@ function draw() {
   setColorN(noff)
   
   
-  let fontSize = 75;
-  fill(255)
+  let fontSize = 65;
+  fill(0)
   textFont(myF);
   textSize(fontSize)
   text(round(hc_left), 10, fontSize);
