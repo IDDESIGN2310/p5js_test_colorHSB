@@ -21,11 +21,14 @@ function setup() {
   setColorN();
   sat = random(50,100)
   unit = width/3;
-  
-  fullscreen(true);
+  pushFullscreen()
 }
 
-
+function pushFullscreen(){
+  let doc = window.document;
+  let docEl = doc.documentElement;
+  docEl.requestFullscreen();
+}
 
 function mouseReleased(){
   setColorN();
