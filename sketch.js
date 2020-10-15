@@ -15,18 +15,17 @@ function preload(){
 
 function setup() {
   
-  
   createCanvas(windowWidth, windowHeight);
   
   colorMode(HSB);
   setColorN();
   sat = random(50,100)
-  
   unit = width/3;
   
-  setTimeout(function(){  alert("Hello! I am an alert box!!"); fullscreen(true); }, 1000);
-  
+  fullscreen(true);
 }
+
+
 
 function mouseReleased(){
   setColorN();
@@ -37,7 +36,7 @@ function setColorN(nOff){
   hc_center = noise(nOff)*360;
   hc_left = hc_center -com_off;
   hc_right = hc_center +com_off;
-  hc_opp = hc_center -180;
+  hc_opp =  abs( hc_center -180 );
 
   
 }
@@ -55,15 +54,37 @@ function draw() {
   fill(hc_right,sat,100,1)
   rect(unit*2,0, unit, height)
   
-  fill(abs(hc_opp),sat,100,1)
+  fill(hc_opp,sat,100,1)
   rect(unit,height/2, unit, height/2)
   
   noff += 0.003;
   setColorN(noff)
+
+  levelAni(0,0,unit, hc_left,1,0, hc_right)
+  levelAni(unit*2,0,unit, hc_right,1,0, hc_left)
+  levelAni(unit,0,unit, hc_center,0.5,0, hc_opp)
+  levelAni(unit,0,unit, hc_opp,0.5,height/2, hc_center)
+  textPart();
+}
+
+
+function levelAni(x, y, w, h, off, yoff, cv){
+  stroke(cv, sat, 100, 1)
+  strokeWeight(height/3)
+  strokeCap(SQUARE);
+  mappedH = map(h, 0, 360, 0, height*off)
+  let x1 = x;
+  let x2 = x+w;
+  let y1 = mappedH+yoff
+  let y2 = mappedH+yoff
+  line(x1, y1, x2, y2)
+}
+
+function textPart(){
   
-  
-  let fontSize = 65;
+  let fontSize = unit*0.4;
   fill(0)
+  noStroke();
   textFont(myF);
   textSize(fontSize)
   text(round(hc_left), 10, fontSize);
@@ -80,6 +101,7 @@ function draw() {
   textFont(myF);
   textSize(fontSize)
   text(round(hc_opp), unit+10, height/2+fontSize);
+
 }
 
 
