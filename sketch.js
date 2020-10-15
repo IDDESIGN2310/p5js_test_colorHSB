@@ -8,6 +8,7 @@ let noff=0;
 
 let unit
 let myF;
+let fullScreenBtn;
 
 function preload(){
   myF = loadFont('assets/Lato-Thin.ttf')
@@ -21,13 +22,20 @@ function setup() {
   setColorN();
   sat = random(50,100)
   unit = width/3;
-  pushFullscreen()
+  
+  fullScreenBtn = createButton('').size(20,20).position(width-30, height-30).mousePressed(pushFullscreen);
+  fullScreenBtn.style("background-color", "black")
+  fullScreenBtn.style("border", "none")
+  fullScreenBtn.style("border-radius", "10px")
+  fullScreenBtn.style("border-radius", "10px")
+  
+  //fullscreen(true);
+  //pushFullscreen()
 }
 
 function pushFullscreen(){
-  let doc = window.document;
-  let docEl = doc.documentElement;
-  docEl.requestFullscreen();
+  let fs = fullscreen();
+  fullscreen(!fs)
 }
 
 function mouseReleased(){
