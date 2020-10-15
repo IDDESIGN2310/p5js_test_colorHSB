@@ -24,7 +24,7 @@ function setup() {
   
   unit = width/3;
   
-  setTimeout(function(){  fullscreen(true); }, 5000);
+  setTimeout(function(){  alert("Hello! I am an alert box!!"); fullscreen(true); }, 1000);
   
 }
 
