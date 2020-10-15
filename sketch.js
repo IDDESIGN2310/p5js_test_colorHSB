@@ -15,6 +15,7 @@ function preload(){
 
 function setup() {
   
+   fullscreen(true);
   createCanvas(windowWidth, windowHeight);
   
   colorMode(HSB);
@@ -23,8 +24,7 @@ function setup() {
   
   unit = width/3;
   
-  let fs = fullscreen();
-    fullscreen(true);
+ 
   
 }
 
