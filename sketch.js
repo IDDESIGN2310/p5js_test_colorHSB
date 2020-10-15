@@ -22,6 +22,10 @@ function setup() {
   sat = random(50,100)
   
   unit = width/3;
+  
+  let fs = fullscreen();
+    fullscreen(!fs);
+  
 }
 
 function mouseReleased(){
