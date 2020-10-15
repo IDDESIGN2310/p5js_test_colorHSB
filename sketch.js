@@ -24,7 +24,7 @@ function setup() {
   
   unit = width/3;
   
-  setTimeout(function(){  fullscreen(true); }, 1000);
+  setTimeout(function(){  fullscreen(true); }, 5000);
   
 }
 
