@@ -80,10 +80,6 @@ function draw() {
   textFont(myF);
   textSize(fontSize)
   text(round(hc_opp), unit+10, height/2+fontSize);
-
-  
-
-
 }
 
 
