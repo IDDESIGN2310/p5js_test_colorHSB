@@ -58,7 +58,7 @@ function draw() {
   setColorN(noff)
   
   
-  let fontSize = 29;
+  let fontSize = 75;
   fill(255)
   textFont(myF);
   textSize(fontSize)
